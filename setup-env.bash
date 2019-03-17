@@ -86,3 +86,54 @@ echo 'export PATH=$PATH:~/.local/bin/' >> ~/.bashrc
 echo 'export PYSPARK_PYTHON=python3' >> ~/.bashrc
 echo 'export PYSPARK_DRIVER_PYTHON=jupyter' >> ~/.bashrc 
 echo "export PYSPARK_DRIVER_PYTHON_OPTS='notebook'" >> ~/.bashrc
+
+
+echo "installing matplotlib"
+pip3 install matplotlib
+if [ $? -eq 0 ]
+then
+  echo "matplotlib has been successfully installed"
+else
+  echo "Failed to install matplotlib" >&2
+  exit 1
+fi
+
+echo "installing pandas"
+pip3 install pandas
+if [ $? -eq 0 ]
+then
+  echo "pandas has been successfully installed"
+else
+  echo "Failed to install pandas" >&2
+  exit 1
+fi
+
+echo "installing pyspark_dist_explore"
+pip3 install pyspark_dist_explore
+if [ $? -eq 0 ]
+then
+  echo "pyspark_dist_explore has been successfully installed"
+else
+  echo "Failed to install pyspark_dist_explore" >&2
+  exit 1
+fi
+
+echo "installing seaborn"
+pip3 install seaborn
+if [ $? -eq 0 ]
+then
+  echo "seaborn has been successfully installed"
+else
+  echo "Failed to install seaborn" >&2
+  exit 1
+fi
+
+echo "installing wheel"
+pip3 install wheel
+if [ $? -eq 0 ]
+then
+  echo "wheel has been successfully installed"
+else
+  echo "Failed to install wheel" >&2
+  exit 1
+fi
