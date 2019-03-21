@@ -137,3 +137,23 @@ else
   echo "Failed to install wheel" >&2
   exit 1
 fi
+
+echo "installing plotly"
+pip3 install plotly
+if [ $? -eq 0 ]
+then
+  echo "plotly has been successfully installed"
+else
+  echo "Failed to install plotly" >&2
+  exit 1
+fi
+
+echo "installing sklearn"
+pip3 install sklearn
+if [ $? -eq 0 ]
+then
+  echo "sklearn has been successfully installed"
+else
+  echo "Failed to install sklearn" >&2
+  exit 1
+fi
