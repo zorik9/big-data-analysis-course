@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 OIFS=$IFS;
 IFS=",";
