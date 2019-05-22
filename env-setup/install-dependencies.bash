@@ -3,10 +3,16 @@
 OIFS=$IFS;
 IFS=",";
 
-dependencies=`cat dependencies.txt`
-dependenciesArray=$dependencies;
+echo "Read pip dependencies"
+pip_dependencies=`cat pip-dependencies.txt`
 
-for dependency in $dependenciesArray
+echo "Read pip3 dependencies"
+pip3_dependencies=`cat pip3-dependencies.txt`
+
+echo "Concatenate pip & pip3 depemdencies into a single array"
+dependencies_array=("${pip_dependencies[@]}" "${pip3_dependencies[@]}")
+
+for dependency in $dependencies_array
 do
 	echo "check if $dependency is installed"
 	pip3 list | grep -F $dependency

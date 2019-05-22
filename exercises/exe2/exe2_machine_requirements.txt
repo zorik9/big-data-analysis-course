@@ -1,8 +1,12 @@
 vm:
 	memory: 4GB
-	Hard Disk: 20GB
-	processors: 2
+	Hard Disk: 40GB
+	processors: 8
+
+File system:
+	/tmp size:20GB+ [sudo mount -t tmpfs -o size=20G,mode=1777 overflow /tmp]
 
 python:
 	version: 3
 	package installer: pip3
+
