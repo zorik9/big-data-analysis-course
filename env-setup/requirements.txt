@@ -4,6 +4,9 @@ os:
 	Hard Disk: 20GB
 	C.P.U: 2 cores
 
+File System:
+	/tmp: 10GB+
+
 python: (python requirements can be installed using the setup script)
 	version: 3
 	package manager pip3

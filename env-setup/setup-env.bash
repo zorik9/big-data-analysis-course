@@ -1,8 +1,10 @@
 #!/bin/bash
+script_path=$(dirname $0)
 
 # Installation configurations
+python_version=3.7
 jdk_version=8
-spark_version=2.4.0
+spark_version=2.4.3
 hadoop_version=2.7
 spark_parent_folder=/opt
 spark_dir=$spark_parent_folder/spark
@@ -157,6 +159,11 @@ else
 	exit 1
 fi
 
+echo "installin python-$python_version"
+sudo add-apt-repository ppa:jonathonf/python-$python_version
+sudo apt-get update
+sudo apt-get install python$python_version
+
 echo "updating the following environment variables: PYSPARK_PYTHON, PYSPARK_DRIVER_PYTHON, PYSPARK_DRIVER_PYTHON_OPTS"
 echo 'export PATH=$PATH:~/.local/bin/' >> ~/.bashrc 
 echo 'export PYSPARK_PYTHON=python3' >> ~/.bashrc
@@ -164,7 +171,7 @@ echo 'export PYSPARK_DRIVER_PYTHON=jupyter' >> ~/.bashrc
 echo "export PYSPARK_DRIVER_PYTHON_OPTS='notebook'" >> ~/.bashrc
 
 echo "Installing dependencies"
-./install-dependencies.bash
+$script_path/install-dependencies.bash
 if [ $? -eq 0 ]
 then
 	echo "dependencies have been successfully installed"
