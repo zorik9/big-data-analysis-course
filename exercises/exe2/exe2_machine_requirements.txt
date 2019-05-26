@@ -1,6 +1,6 @@
 vm:
 	memory: 4GB
-	Hard Disk: 40GB
+	Hard Disk: 30GB
 	processors: 8
 
 File system:
