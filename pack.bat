@@ -25,6 +25,7 @@ set exclude_extensions=bat gitignore zip tmp
 set extension_to_rename=bash
 set extension_new_name=txt
 set exercise_main_file=%exercise_dir%\exe%exe_index%.ipynb
+set exercise_versioned_file=%exercise_dir%\exe%exe_index%_v1.ipynb
 set exercise_main_file_description=jupyter notebook file
 
 echo Making sure that exercise %exe_index% directory exists.
@@ -43,9 +44,11 @@ if not exist %exercise_dir%\* (
 
 echo Making sure that %exercise_main_file_description% is not missing.
 if not exist %exercise_main_file% (
-	echo cannot pack exercise %exe_index%, because the %exercise_main_file_description%: %exercise_main_file% is missing.
-	pause
-	exit 1
+	if not exist %exercise_versioned_file% (
+		echo cannot pack exercise %exe_index%, because the %exercise_main_file_description%: %exercise_main_file% is missing.
+		pause
+		exit 1
+	)
 )
 
 echo Create %target_dir% directory, if not exists.
