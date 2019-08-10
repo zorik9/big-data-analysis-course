@@ -22,6 +22,6 @@ Execution:
 	-	Running the program in jupyter:
 			- type pyspark
 			- Open exe3.ipynb
-			- Wait for the kernrl to finish to load.
+			- Wait for the kernel to finish to load.
 			- Go to kernel in the menu bar.
 			- Select Restart & Run All
